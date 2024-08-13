@@ -1,0 +1,106 @@
+<div class="hold-transition login-page">
+    <div class="login-box">
+      <!-- /.login-logo -->
+      <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+         <!--  <a href="../../index2.html" class="h1">
+            <img class="animation__wobble" src="/assets/img/logoV2.png" alt="KangalaLogo" height="90" width="200">
+          </a> -->
+          <a href="#" class="h1"><b>Metrologie </b> Systeme </a>
+        </div>
+        <div class="card-body">
+          <p class="login-box-msg">Connecte toi pour commencer une nouvelle session</p>
+  
+          <form (ngSubmit)="onSubmit(signinForm)" #signinForm="ngForm"> 
+  
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+              <small class="text-danger" *ngIf="email.errors?.['required']">
+                Email est obligatoire.
+              </small>
+            </div>
+            <!-- Email Field -->
+            <div class="input-group mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                name="email"
+                ngModel
+                required
+                #email="ngModel"
+              >
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>          
+  
+            <!-- Password Field -->
+  
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+              <small class="text-danger" *ngIf="password.errors?.['required']">
+                Le mot de passe est obligatoire.
+              </small>
+            </div>
+            
+            <div class="input-group mb-3">
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+                ngModel
+                required
+                #password="ngModel"
+              >
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>          
+  
+            <!-- Submit Button -->
+            <div class="row">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  <input type="checkbox" id="remember">
+                  <label for="remember">
+                    Se rappeler de moi
+                  </label>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block" [disabled]="signinForm.invalid || isSubmitting">
+                  Connexion
+                </button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+  
+          <div class="social-auth-links text-center mt-2 mb-3">
+            <a href="#" class="btn btn-block btn-primary">
+              <i class="fab fa-facebook mr-2"></i> Se connecter via Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-danger">
+              <i class="fab fa-google-plus mr-2"></i> Se connecter via Google+
+            </a>
+          </div>
+          <!-- /.social-auth-links -->
+  
+          <p class="mb-1">
+            <a href="#">J'ai oublié mon mot de passe</a>
+          </p>
+          <p class="mb-0">
+            <a href="#" class="text-center">Registre un nouveau compte</a>
+          </p>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+    </div>
+    <!-- /.login-box -->
+  </div>
